@@ -1,12 +1,8 @@
 const express = require('express');
+const SingUpContollar = require('../../contollar/SingUpContollar');
 const authrouter = express.Router()
+authrouter.use(express.json());
 
-authrouter.get('/signup', (req, res) => {
-    res.send({
-        name: "kamrul-bisswas",
-        email: "bisswaskamruldev@gmail.com",
-        password: "#016102"
-    })
-})
+authrouter.post('/signup', SingUpContollar)
 
 module.exports = authrouter
